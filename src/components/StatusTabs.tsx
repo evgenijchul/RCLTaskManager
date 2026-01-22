@@ -31,10 +31,7 @@ export const StatusTabs = ({ value, onChange }: Props) => {
             ]}
           >
             <Text
-              style={{
-                color: theme.colors.text,
-                fontWeight: '400',
-              }}
+              style={[styles.label, { color: theme.colors.text }]}
             >
               {option}
             </Text>
@@ -54,5 +51,8 @@ const styles = StyleSheet.create({
     paddingVertical: vs(8),
     paddingHorizontal: s(10),
     borderBottomWidth: s(2),
+  },
+  label: {
+    fontWeight: '400',
   },
 });
