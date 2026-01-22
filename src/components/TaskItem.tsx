@@ -37,7 +37,7 @@ export const TaskItem = ({ task, onToggleStatus }: Props) => {
       {/* Due Date */}
       <View style={styles.colDue}>
         <Text
-          style={{ color: theme.colors.mutedText, fontSize: ms(12) }}
+          style={[styles.metaText, { color: theme.colors.mutedText }]}
           numberOfLines={1}
           adjustsFontSizeToFit
         >
@@ -48,7 +48,7 @@ export const TaskItem = ({ task, onToggleStatus }: Props) => {
       {/* Status */}
       <View style={styles.colStatus}>
         <Text
-          style={{ color: theme.colors.text, fontSize: ms(12) }}
+          style={[styles.metaText, { color: theme.colors.text }]}
           numberOfLines={1}
           adjustsFontSizeToFit
         >
@@ -67,7 +67,7 @@ export const TaskItem = ({ task, onToggleStatus }: Props) => {
           },
         ]}
       >
-        <Text style={{ color: theme.colors.text, fontSize: ms(12) }}>
+        <Text style={[styles.metaText, { color: theme.colors.text }]}>
           Change
         </Text>
       </Pressable>
@@ -97,6 +97,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: ms(15),
     fontWeight: '500',
+  },
+  metaText: {
+    fontSize: ms(12),
   },
   action: {
     paddingHorizontal: s(10),
