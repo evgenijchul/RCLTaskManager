@@ -2,6 +2,8 @@ export const TASK_STATUSES = ['Pending', 'In Progress', 'Done'] as const;
 
 export type TaskStatus = (typeof TASK_STATUSES)[number];
 
+export const TASK_FILTER_ALL = 'All' as const;
+
 export type Task = {
   id: string;
   title: string;
@@ -10,4 +12,6 @@ export type Task = {
   createdAt: number;
 };
 
-export type TaskFilter = 'All' | TaskStatus;
+export type TaskFilter = typeof TASK_FILTER_ALL | TaskStatus;
+
+export const TASK_FILTERS: readonly TaskFilter[] = [TASK_FILTER_ALL, ...TASK_STATUSES];
