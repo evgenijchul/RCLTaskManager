@@ -14,4 +14,6 @@ export type Task = {
 
 export type TaskFilter = typeof TASK_FILTER_ALL | TaskStatus;
 
+export type NewTaskInput = Pick<Task, 'title' | 'dueDate' | 'status'>;
+
 export const TASK_FILTERS: readonly TaskFilter[] = [TASK_FILTER_ALL, ...TASK_STATUSES];
