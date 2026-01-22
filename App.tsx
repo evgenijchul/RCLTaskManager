@@ -2,19 +2,24 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { TaskManagerScreen } from './src/screens';
-import { useThemeController } from './src/theme/useThemeController';
+import { ThemeProvider, useTheme } from './src/theme';
+
+const AppContent = () => {
+  const { barStyle } = useTheme();
+  return (
+    <>
+      <StatusBar barStyle={barStyle} />
+      <TaskManagerScreen />
+    </>
+  );
+};
 
 const App = () => {
-  const { isDarkMode, setIsDarkMode, theme, barStyle } = useThemeController();
-
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={barStyle} />
-      <TaskManagerScreen
-        theme={theme}
-        isDarkMode={isDarkMode}
-        onToggleDarkMode={setIsDarkMode}
-      />
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 };
