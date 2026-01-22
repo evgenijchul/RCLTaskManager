@@ -13,10 +13,7 @@ export const StatusTabs = ({ value, onChange }: Props) => {
   const { theme } = useTheme();
 
   return (
-    <View
-      accessibilityRole="tablist"
-      style={[styles.row, { borderColor: theme.colors.border }]}
-    >
+    <View style={[styles.row, { borderColor: theme.colors.border }]}>
       {TASK_FILTERS.map(option => {
         const selected = value === option;
         return (
