@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useTheme } from '../theme';
 import { nextStatus } from '../utils/taskStatus';
-import { Task } from '../types/task';
+import { Task } from '../types';
 import { ms, s, vs } from '../utils/scale';
 import { getFormattedDateForDisplay } from '../utils/date';
 

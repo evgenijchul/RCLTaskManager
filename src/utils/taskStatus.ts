@@ -1,4 +1,4 @@
-import { TASK_STATUSES, TaskStatus } from '../types/task';
+import { TASK_STATUSES, TaskStatus } from '../types';
 
 export const nextStatus = (current: TaskStatus): TaskStatus => {
   const idx = TASK_STATUSES.indexOf(current);
