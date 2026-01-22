@@ -109,9 +109,7 @@ export const DatePickerField = ({ label, value, onChange }: Props) => {
             >
               <View style={styles.modalHeader}>
                 <Pressable onPress={close}>
-                  <Text
-                    style={{ color: theme.colors.primary, fontWeight: '700' }}
-                  >
+                  <Text style={[styles.modalActionText, { color: theme.colors.primary }]}>
                     Cancel
                   </Text>
                 </Pressable>
@@ -121,9 +119,7 @@ export const DatePickerField = ({ label, value, onChange }: Props) => {
                     close();
                   }}
                 >
-                  <Text
-                    style={{ color: theme.colors.primary, fontWeight: '700' }}
-                  >
+                  <Text style={[styles.modalActionText, { color: theme.colors.primary }]}>
                     Done
                   </Text>
                 </Pressable>
@@ -178,5 +174,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: s(8),
     paddingBottom: vs(10),
+  },
+  modalActionText: {
+    fontWeight: '700',
   },
 });
